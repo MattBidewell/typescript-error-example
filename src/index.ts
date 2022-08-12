@@ -1,11 +1,12 @@
-import { AhError } from "./errors/AhError";
-import { MattsAwesomeError } from "./errors/MattsAwesomeError";
-import { MattsError } from "./errors/MattsError";
-import { MattsLessAwesomeError } from "./errors/MattsLesssAwesomeError";
-import { WhatHappenedHereError } from "./errors/WhatHappenedHereError";
+import { AhError } from "./errors/AhError.js";
+import { MattsAwesomeError } from "./errors/MattsAwesomeError.js";
+import { MattsError } from "./errors/MattsError.js";
+import { MattsLessAwesomeError } from "./errors/MattsLesssAwesomeError.js";
+import { WhatHappenedHereError } from "./errors/WhatHappenedHereError.js";
 
 try {
-  const random = Math.random() * 100;
+  const random = Math.floor(Math.random() * 10);
+  console.log(random);
   if (random < 2) {
     throw new AhError();
   } else if (random < 4) {
@@ -23,7 +24,7 @@ try {
   } else if (err instanceof MattsAwesomeError) {
     console.log("😎");
   } else if (err instanceof MattsError) {
-    console.log("🧡");
+    console.log("🍊");
   } else if (err instanceof MattsLessAwesomeError) {
     console.log("😢");
   } else if (err instanceof WhatHappenedHereError) {
